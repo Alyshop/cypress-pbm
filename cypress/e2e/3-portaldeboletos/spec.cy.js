@@ -2,7 +2,7 @@ describe('template spec', () => {
   it('passes', () => {
     cy.intercept('https://portaldeboletos.com.br/adm?ctr=cedentes&mt=index').as('empresas');
     cy.visit('portaldeboletos.com.br/adm')
-    cy.get('[name="txt_usuario"]').type('alysson.alves')
+    cy.get('[name="txt_usuario"]').type(Cypress.env('user'))
     cy.get('[name="txt_senha"]').type(Cypress.env('password'))
     cy.get('#acessar1').click();
     Cypress.on('uncaught:exception', (err, runnable) => {
