@@ -18,5 +18,6 @@ describe('template spec', () => {
     cy.get('#lista_boletos > tr:nth-child(1) > td:nth-child(2) > a').invoke('removeAttr', 'target').click();
     cy.get('[onclick="gerarBoleto()"]').click();
 
+    
   })
 })
